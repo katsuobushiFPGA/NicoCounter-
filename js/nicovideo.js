@@ -48,9 +48,15 @@ $(function() {
 	  var array=JSON.parse(localStorage.getItem("NICO_COUNTER+"));
 	  $(".videoList01Wrap").each(function(){
 	    var movId = $(this).find(".itemThumb").attr('data-id');
-            viewCount = array[movId];//キャッシュから視聴回数取得
-            if(viewCount == undefined) {
+	    if(array==null) {
+              //何もしない
               viewCount = 0;
+            }
+            else {
+	      viewCount = array[movId];//キャッシュから視聴回数取得
+              if(viewCount == undefined) {
+ 	             viewCount = 0;
+	      }
 	    }
 	    $(this).parent().prepend("<div align=\"center\"><p>視聴回数:<font color =\"red\">"  + viewCount + "</font>回 </p></div>");
 	  });
