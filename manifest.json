@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "NicoCounter+",
+  "description": "This chrome extension counts viewing times for nicovideo's movie",
+  "version": "1.0",
+  "browser_action": {
+    "default_title": "NicoCounter+",
+    "default_icon": "img/19px.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+       "matches": ["http://www.nicovideo.jp/*"],
+       "js": ["js/jquery-2.1.4.min.js","js/nicovideo.js"],
+       "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent":false
+  },
+  "permissions": [
+    "background",
+    "tabs",
+    "https://*/*",
+    "http://*/*",
+    "storage"
+  ]	
+}
