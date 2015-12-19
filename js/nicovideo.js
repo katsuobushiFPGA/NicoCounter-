@@ -42,7 +42,7 @@ $(function() {
               saveStorage(movieId);
 	}
 	//ランキング、検索結果ページの場合
-	else if(currentURL.match("ranking") || currentURL.match("search")) {
+	else if(currentURL.match("ranking") || currentURL.match("search") || currentURL.match("tag")) {
 	  console.log("ranking or search page");
 	//キャッシュ読み込み
 	  var array=JSON.parse(localStorage.getItem("NICO_COUNTER+"));
